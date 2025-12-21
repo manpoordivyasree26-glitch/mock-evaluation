@@ -1,26 +1,28 @@
-import { PostsProvider } from "../context/PostsContext";
-import { ThemeProvider,ThemeContext } from "./context/ThemeContext";
-import PostsList from "./components/PostsList";
+import { useContext } from "react";
+import { ThemeProvider, ThemeContext } from "./context/ThemeContext";
+import { PostsProvider } from "./context/PostsContext";
 import ThemeToggle from "./components/ThemeToggle";
-import {useContext} from "react";
-const AppContent=()=>{
-const {theme}=useContext(ThemeContext);
-return(
-  <div className={`app ${theme}`}>
-    <ThemeToggle/>
-    <PostsList/>
-  </div>
-);
-};
-function App(){
-  return(
+import PostsList from "./components/PostsList";
+
+function AppInner() {
+  const { theme } = useContext(ThemeContext);
+
+  return (
+    <div className={`app ${theme}`}>
+      <ThemeToggle />
+      <PostsList />
+    </div>
+  );
+}
+
+function App() {
+  return (
     <ThemeProvider>
       <PostsProvider>
-        <AppContent/>
-
-    
+        <AppInner />
       </PostsProvider>
     </ThemeProvider>
   );
 }
+
 export default App;
