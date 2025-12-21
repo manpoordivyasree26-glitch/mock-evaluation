@@ -1,6 +1,6 @@
-import { PostsProvider } from "./context/postsContext";
+import { PostsProvider } from "../context/PostsContext";
 import { ThemeProvider,ThemeContext } from "./context/ThemeContext";
-import PostsList from "./components/PostsLists";
+import PostsList from "./components/PostsList";
 import ThemeToggle from "./components/ThemeToggle";
 import {useContext} from "react";
 const AppContent=()=>{
@@ -16,9 +16,9 @@ function App(){
   return(
     <ThemeProvider>
       <PostsProvider>
-        <AppContent>
+        <AppContent/>
 
-        </AppContent>
+    
       </PostsProvider>
     </ThemeProvider>
   );

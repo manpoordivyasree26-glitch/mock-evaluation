@@ -1,6 +1,6 @@
 import {createContext,useEffect,useState} from "react";
 
-export const PostContext=createContext();
+export const PostsContext=createContext();
 
 export const PostsProvider=({children})=>{
     const[posts,setPosts]=useState([]);
@@ -17,6 +17,6 @@ export const PostsProvider=({children})=>{
         setPosts(posts.filter(post=>post.id!==id))
     };
     return(
-        <PostContext.Provider value={{posts,updatePost,deletePost}}>{children}</PostContext.Provider>
+        <PostsContext.Provider value={{posts,updatePost,deletePost}}>{children}</PostsContext.Provider>
     );
 };

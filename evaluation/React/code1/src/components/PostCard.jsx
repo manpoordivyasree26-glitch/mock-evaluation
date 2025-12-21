@@ -1,5 +1,5 @@
 import {useContext,useState} from "react";
-import { PostContext} from "../context/postsContext";
+import { PostContext} from "../context/PostsContext";
 import { ThemeContext } from "../context/ThemeContext";
 
 const PostCard=({post})=>{
