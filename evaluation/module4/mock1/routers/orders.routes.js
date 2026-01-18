@@ -48,3 +48,23 @@ res.json(db.orders)
 
 //cancel order
 //delete order
+router.delete("/:orderId",(req,res)=>{
+    const{orderId}=req.params;
+    const db=readDB();
+    const order=db.orders.find(o=>o.id == orderId);
+    if(!order)
+        return 
+    res.status(404).json({message:"order already cancelled"})
+
+    const today=newDate().toISOString().split("T")[0];
+    if(order.createdAt !== today){
+        return res.status(400).json({message:"cancel only allowed on same day"})
+    }
+    order.status="cancelled";
+    const product=db.products.find(p=>p.id == order.productId);
+    product.stock =+ order.quantity;
+    writeDB(db);
+    return res.json({message:"Order Cancelled successfully"});
+
+})
+export default router;
