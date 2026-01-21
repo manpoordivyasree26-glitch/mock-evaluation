@@ -1,7 +1,7 @@
 import express from "express"
-import analyticsRoutes from "./routes/analytics.routes";
-import ordersRouter from "./routes/orders.routes";
-import productsRouter from "./routes/products.routes"
+import analyticsRoutes from "./routes/analytics.routes.js";
+import ordersRouter from "./routes/orders.routes.js";
+import productsRouter from "./routes/products.routes.js"
 
 const app=express;
 app.use(express.json())

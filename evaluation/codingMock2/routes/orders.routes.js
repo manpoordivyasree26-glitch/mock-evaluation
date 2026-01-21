@@ -4,7 +4,7 @@ import {
   getAllOrders,
   cancelOrder,
   changeOrderStatus
-} from "../controllers/orders.controller.js";
+} from "../controller/orders.controller.js";
 
 const router = Router();
 

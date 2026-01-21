@@ -5,7 +5,7 @@ import {
   getShippedOrders,
   getTotalRevenueByProduct,
   getAllRevenue
-} from "../controllers/analytics.controller.js";
+} from "../controller/analytics.controller.js";
 
 const router = Router();
 
